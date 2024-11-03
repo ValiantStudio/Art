@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Tattoo Business</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome for icons -->
+
+    <!-- Smooth Scroll Style -->
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Main Container for Centered Content with Side Enhancements -->
+    <div class="main-container">
+        
+        <!-- Header Section -->
+        <header id="home">
+            <h1>Your Tattoo Business</h1>
+            <p>Unique tattoos crafted with passion. Serving clients across the country.</p>
+        </header>
+        
+        <!-- Navigation Section -->
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+
+        <!-- Home Section -->
+        <section id="home">
+            <h2>Welcome</h2>
+            <p>I'm a professional tattoo artist specializing in unique styles. Browse through my gallery to see some of my favorite designs, or reach out to book a session.</p>
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="gallery">
+            <h2>Gallery</h2>
+            <div class="gallery-grid">
+                <!-- Replace these with your own images -->
+                <a href="t1.jpg" class="gallery-item"><img src="t1.jpg" alt="Tattoo 1"></a>
+                <a href="t2.jpg" class="gallery-item"><img src="t2.jpg" alt="Tattoo 2"></a>
+                <a href="t3.jpg" class="gallery-item"><img src="t3.jpg" alt="Tattoo 3"></a>
+                <a href="t4.jpg" class="gallery-item"><img src="t4.jpg" alt="Tattoo 4"></a>
+                <a href="t5.jpg" class="gallery-item"><img src="t5.jpg" alt="Tattoo 5"></a>
+                <a href="t6.1.jpg" class="gallery-item"><img src="t6.1.jpg" alt="Tattoo 6"></a>
+                <!-- Add more images as needed -->
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about">
+            <h2>About Me</h2>
+            <p>With years of experience, I bring a unique style and attention to detail. My work is inspired by traditional and modern tattoo styles, and I'm passionate about creating tattoos that not only look amazing but hold deep meaning for each client.</p>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>Interested in getting a tattoo? Reach out via the contact form below or find me on social media.</p>
+            <p><i class="fas fa-envelope"></i> Email: <a href="mailto:youremail@example.com">youremail@example.com</a></p>
+            <p><i class="fas fa-phone"></i> Phone: <a href="tel:+1234567890">+1234567890</a></p>
+
+            <!-- Social Media Links -->
+            <div class="social-media">
+                <a href="https://instagram.com/yourprofile" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://facebook.com/yourprofile" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://twitter.com/yourprofile" target="_blank"><i class="fab fa-twitter"></i></a>
+            </div>
+
+            <!-- Contact Form -->
+            <form action="https://formspree.io/f/yourformid" method="POST">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Your Name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Your Email" required>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" placeholder="Your Message" rows="4" required></textarea>
+
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+
+        <!-- Footer Section -->
+        <footer>
+            <p>&copy; 2023 Your Tattoo Business. All rights reserved.</p>
+            <div class="social-media">
+                <a href="https://instagram.com/yourprofile" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://facebook.com/yourprofile" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://twitter.com/yourprofile" target="_blank"><i class="fab fa-twitter"></i></a>
+            </div>
+        </footer>
+
+    </div> <!-- End of Main Container -->
+
+    <!-- Lightbox Initialization Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/2.1.3/simple-lightbox.min.js"></script>
+    <script>
+        const lightbox = new SimpleLightbox('.gallery-item', { /* options */ });
+    </script>
+
+    <!-- Active Link Highlight Script -->
+    <script>
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('nav ul li a');
+
+            let currentSection = '';
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (window.scrollY >= sectionTop - 50) {
+                    currentSection = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').includes(currentSection)) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
